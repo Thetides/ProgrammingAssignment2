@@ -1,14 +1,16 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Cache givin matrix and find the inverse of the cached matrix
 
-## Write a short comment describing this function
+## Caches matrix
 
 makeCacheMatrix <- function(x = matrix()) {
+  
   m<-NULL
+  ## set the value of the matrix globally
   set<-function(y){
     x<<-y
     m<<-NULL
   }
+  ## getting the value of the matrix
   get<-function() x
   setmatrix<-function(solve) m<<- solve
   getmatrix<-function() m
@@ -16,7 +18,7 @@ makeCacheMatrix <- function(x = matrix()) {
        setmatrix=setmatrix,
        getmatrix=getmatrix)
 }
-## Write a short comment describing this function
+## Inverses the cached matrix
 
 cacheSolve <- function(x=matrix(), ...) {
   m<-x$getmatrix()
